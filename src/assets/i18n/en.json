@@ -1,0 +1,39 @@
+{
+  "app": {
+    "title": "Product Store"
+  },
+  "header": {
+    "title": "Store",
+    "welcome": "Welcome",
+    "myCart": "My Cart",
+    "manageProducts": "Manage Products",
+    "profile": "Profile",
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register"
+  },
+  "product": {
+    "name": "Name",
+    "price": "Price",
+    "properties": "Properties",
+    "image": "Image",
+    "add": "Add",
+    "details": "Details",
+    "addToCart": "Add To Cart"
+  },
+  "footer": {
+    "english": "English",
+    "arabic": "Arabic"
+  },
+  "profile": {
+    "username": "Username",
+    "usernameRequired": "Username Required",
+    "email": "Email",
+    "emailRequired": "Email Required",
+    "newPassword": "New Password",
+    "passwordRequired": "Password Required",
+    "confirmPassword": "Confirm Password",
+    "confirmRequired": "Passwords Must Match",
+    "submit": "Submit"
+  }
+}

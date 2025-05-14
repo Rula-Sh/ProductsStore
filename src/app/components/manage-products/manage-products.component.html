@@ -1,0 +1,92 @@
+<div class="center-wrapper">
+  <form
+    class="container"
+    [formGroup]="productForm"
+    (ngSubmit)="addProduct()"
+    enctype="multipart/form-data"
+  >
+    <div class="input-container">
+      <label for="name">{{ "product.name" | translate }}:</label>
+      <div class="input-error">
+        <input type="text" placeholder="name" formControlName="name" required />
+        <div
+          class="error"
+          *ngIf="
+            productForm.get('name')?.invalid && productForm.get('name')?.touched
+          "
+        >
+          {{ "product.nameRequired" | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="price">{{ "product.price" | translate }}:</label>
+      <div class="input-error">
+        <input
+          type="number"
+          placeholder="price"
+          formControlName="price"
+          required
+        />
+        <div
+          class="error"
+          *ngIf="
+            productForm.get('price')?.invalid &&
+            productForm.get('price')?.touched
+          "
+        >
+          {{ "product.priceRequired" | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="properties">{{ "product.properties" | translate }}:</label>
+      <div class="input-error">
+        <input
+          type="text"
+          placeholder="properties"
+          formControlName="properties"
+          required
+        />
+        <div
+          class="error"
+          *ngIf="
+            productForm.get('properties')?.invalid &&
+            productForm.get('properties')?.touched
+          "
+        >
+          {{ "product.propertiesRequired" | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="image">{{ "product.image" | translate }}:</label>
+      <div class="input-error">
+        <input
+          class="file-input"
+          type="file"
+          accept="image/*"
+          required
+          (change)="onFileSelected($event)"
+        />
+
+        <div
+          class="error"
+          *ngIf="
+            productForm.get('image')?.invalid &&
+            productForm.get('image')?.touched
+          "
+        >
+          {{ "product.imageRequired" | translate }}
+        </div>
+      </div>
+    </div>
+    <img
+      *ngIf="productForm.get('image')?.value"
+      [src]="productForm.get('image')?.value"
+      width="200"
+    />
+
+    <button>{{ "product.add" | translate }}</button>
+  </form>
+</div>

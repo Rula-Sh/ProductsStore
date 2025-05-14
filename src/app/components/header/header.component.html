@@ -1,0 +1,38 @@
+<header>
+  <div>
+    <a
+      [routerLink]="'/products'"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >🛍️{{ "header.title" | translate }}</a
+    >
+    @if(role == 'Admin'){
+    <a [routerLink]="`/manageProducts`" routerLinkActive="active-link"
+      >{{ "header.manageProducts" | translate }}🏪</a
+    >
+    }@else {
+    <a *ngIf="username" [routerLink]="'/cart'" routerLinkActive="active-link"
+      >{{ "header.myCart" | translate }}🛒</a
+    >
+    }
+  </div>
+  <div>
+    <a
+      *ngIf="username"
+      [routerLink]="`/profile/${userId}`"
+      routerLinkActive="active-link"
+      (click)="goToProfile(userId!)"
+      >{{ "header.welcome" | translate }}, {{ username }}👋</a
+    >
+    @if(username){
+    <a (click)="logout()">{{ "header.logout" | translate }} </a>
+    } @else{
+    <a [routerLink]="'/login'" routerLinkActive="active-link"
+      >{{ "header.login" | translate }}🙎🏻‍♂️</a
+    >
+    <a [routerLink]="'/signup'" routerLinkActive="active-link"
+      >{{ "header.register" | translate }}🙋‍♀️</a
+    >
+    }
+  </div>
+</header>

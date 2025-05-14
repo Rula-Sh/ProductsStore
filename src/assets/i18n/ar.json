@@ -1,0 +1,39 @@
+{
+  "app": {
+    "title": "متجر المنتجات"
+  },
+  "header": {
+    "title": "متجر",
+    "welcome": "مرحبا بك",
+    "myCart": "عربة التسوق",
+    "manageProducts": " إدارة المنتجات",
+    "profile": "الملف الشخصي",
+    "login": "تسجيل الدخول",
+    "logout": "تسجيل الخروج",
+    "register": "اشترك"
+  },
+  "product": {
+    "name": "الاسم",
+    "price": "السعر",
+    "properties": "صفات",
+    "image": "الصورة",
+    "add": "إضافة",
+    "details": "تفاصيل",
+    "addToCart": "أضف إلى السلة"
+  },
+  "footer": {
+    "english": "الانجليزية",
+    "arabic": "العربية"
+  },
+  "profile": {
+    "username": "الاسم",
+    "usernameRequired": "اسم المستخدم مطلوب",
+    "email": "البريد الاكتروني",
+    "emailRequired": "البريد الاكتروني مطلوب",
+    "newPassword": "كلمة السر الجديدة",
+    "passwordRequired": "كلمة السر مطلوبة",
+    "confirmPassword": "تأكيد كلمة السر",
+    "confirmRequired": "كلمات السر يجب ان تتطابق",
+    "submit": "تقديم"
+  }
+}

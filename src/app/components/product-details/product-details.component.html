@@ -1,0 +1,27 @@
+<div class="details-conainer">
+  <img [src]="product.image" />
+
+  <div class="data">
+    <h1>{{ product.name }}</h1>
+    <p>
+      <strong> {{ "product.price" | translate }} </strong> {{ product.price }}
+    </p>
+    <p>
+      <strong>{{ "product.properties" | translate }} </strong>
+      {{ product.properties }}
+    </p>
+    <button class="add-to-cart" (click)="addToCart()">
+      {{ "product.addToCart" | translate }}
+    </button>
+  </div>
+</div>
+
+<button
+  [routerLink]="['/']"
+  routerLinkActive="router-link-active"
+  class="go-back"
+>
+  ← Go back
+</button>
+
+<p-toast />

@@ -1,0 +1,83 @@
+<div class="center-wrapper">
+  <form class="container" [formGroup]="userForm" (ngSubmit)="createUser()">
+    <div class="input-container">
+      <label for="username">Name:</label>
+      <div class="input-error">
+        <input type="text" placeholder="Username" formControlName="username" />
+        <div
+          class="error"
+          *ngIf="
+            userForm.get('username')?.invalid &&
+            userForm.get('username')?.touched
+          "
+        >
+          Username Required
+        </div>
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="email">Email:</label>
+      <div class="input-error">
+        <input
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+          required
+          email
+        />
+        <div
+          class="error"
+          *ngIf="
+            userForm.get('email')?.invalid && userForm.get('email')?.touched
+          "
+        >
+          Email required
+        </div>
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="password">Password:</label>
+      <div class="input-error">
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          required
+          minlength="6"
+        />
+        <div
+          class="error"
+          *ngIf="
+            userForm.get('password')?.invalid &&
+            userForm.get('password')?.touched
+          "
+        >
+          Password required
+        </div>
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="confirmPassword">ConfirmPassword:</label>
+      <div class="input-error">
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          formControlName="confirmPassword"
+          required
+          minlength="6"
+        />
+        <div
+          class="error"
+          *ngIf="
+            userForm.get('confirmPassword')?.valueChanges &&
+            userForm.get('confirmPassword')?.value !=
+              userForm.get('password')?.value
+          "
+        >
+          Passwords Must Match
+        </div>
+      </div>
+    </div>
+    <button>Sign Up</button>
+  </form>
+</div>

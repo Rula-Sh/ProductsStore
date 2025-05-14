@@ -1,0 +1,49 @@
+@if(cart.products.length){
+<div class="details-conainer">
+  <div *ngFor="let product of cart.products">
+    <div class="product-item">
+      <img [src]="product.image" />
+      <div class="data">
+        <div class="product-header">
+          <h3>{{ product.name }}</h3>
+          <button class="delete-product" (click)="removeFromCart(product)">
+            <i class="bi bi-trash-fill h3"></i>
+          </button>
+        </div>
+        <p class="m-0">
+          <strong> {{ "product.price" | translate }}: </strong> ${{
+            product.price
+          }}
+        </p>
+        <div class="product-footer">
+          <div class="quantity-buttons">
+            <i
+              class="bi bi-dash-circle-fill h4 quantity-btn"
+              (click)="decreaseQuantity(product)"
+            ></i>
+            {{ product.quantity }}
+            <i
+              class="bi bi-plus-circle-fill h4 quantity-btn"
+              (click)="increaseQuantity(product)"
+            ></i>
+          </div>
+          <p class="product-total">
+            <strong> Total:</strong> ${{ product.productTotal }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cart-bottom" *ngIf="cart.products.length">
+    <button class="purchase" (click)="purchase()">Purchase</button>
+    <h3 class="m-0">Total: ${{ getCartTotal() }}</h3>
+  </div>
+</div>
+} @else {
+<div class="empty-cart-div">
+  <h1 class="empty-cart-h">Your Cart is Empty. 😢</h1>
+</div>
+
+}
+
+<p-toast />

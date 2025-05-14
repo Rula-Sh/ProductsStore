@@ -1,0 +1,90 @@
+<div class="center-wrapper">
+  <form
+    class="container"
+    [formGroup]="profileForm"
+    (ngSubmit)="UpdateProfile()"
+  >
+    <div class="input-container">
+      <label for="username"> {{ "profile.username" | translate }}:</label>
+      <div class="input-error">
+        <input type="text" placeholder="Username" formControlName="username" />
+        <div
+          class="error"
+          *ngIf="
+            profileForm.get('username')?.invalid &&
+            profileForm.get('username')?.touched
+          "
+        >
+          {{ "profile.usernameRequired" | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="email">{{ "profile.email" | translate }}:</label>
+      <div class="input-error">
+        <input
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+          required
+          email
+        />
+        <div
+          class="error"
+          *ngIf="
+            profileForm.get('email')?.invalid &&
+            profileForm.get('email')?.touched
+          "
+        >
+          {{ "profile.emailRequired" | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="newPassword">{{ "profile.newPassword" | translate }}:</label>
+      <div class="input-error">
+        <input
+          type="password"
+          placeholder="new Password"
+          formControlName="newPassword"
+          required
+          minlength="6"
+        />
+        <div
+          class="error"
+          *ngIf="
+            profileForm.get('newPassword')?.invalid &&
+            profileForm.get('newPassword')?.touched
+          "
+        >
+          {{ "profile.passwordRequired" | translate }}
+        </div>
+      </div>
+    </div>
+    <div class="input-container">
+      <label for="confirmPassword"
+        >{{ "profile.confirmPassword" | translate }}:</label
+      >
+      <div class="input-error">
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          formControlName="confirmPassword"
+          required
+          minlength="6"
+        />
+        <div
+          class="error"
+          *ngIf="
+            profileForm.get('confirmPassword')?.valueChanges &&
+            profileForm.get('confirmPassword')?.value !=
+              profileForm.get('newPassword')?.value
+          "
+        >
+          {{ "profile.confirmRequired" | translate }}
+        </div>
+      </div>
+    </div>
+    <button>{{ "profile.submit" | translate }}</button>
+  </form>
+</div>

@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+body {
+  margin: 0;
+}
+
+.active-link {
+  font-weight: bold;
+  color: #000;
+  font-size: 19px;
+}
+a {
+  margin: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
