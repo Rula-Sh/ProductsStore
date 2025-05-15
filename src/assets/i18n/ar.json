@@ -6,7 +6,7 @@
     "title": "متجر",
     "welcome": "مرحبا بك",
     "myCart": "عربة التسوق",
-    "manageProducts": " إدارة المنتجات",
+    "manage-products": " إدارة المنتجات",
     "profile": "الملف الشخصي",
     "login": "تسجيل الدخول",
     "logout": "تسجيل الخروج",
@@ -32,6 +32,7 @@
     "emailRequired": "البريد الاكتروني مطلوب",
     "newPassword": "كلمة السر الجديدة",
     "passwordRequired": "كلمة السر مطلوبة",
+    "passwordAtleast6": "يجب ان تحتوي كلمة السر على الأقل 6 خانات",
     "confirmPassword": "تأكيد كلمة السر",
     "confirmRequired": "كلمات السر يجب ان تتطابق",
     "submit": "تقديم"

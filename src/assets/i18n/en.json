@@ -6,7 +6,7 @@
     "title": "Store",
     "welcome": "Welcome",
     "myCart": "My Cart",
-    "manageProducts": "Manage Products",
+    "manage-products": "Manage Products",
     "profile": "Profile",
     "login": "Login",
     "logout": "Logout",
@@ -32,6 +32,7 @@
     "emailRequired": "Email Required",
     "newPassword": "New Password",
     "passwordRequired": "Password Required",
+    "passwordAtleast6": "Password Must Contain At Least 6 Characters",
     "confirmPassword": "Confirm Password",
     "confirmRequired": "Passwords Must Match",
     "submit": "Submit"
