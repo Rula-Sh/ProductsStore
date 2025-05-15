@@ -63,6 +63,26 @@
       <label for="image">{{ "product.image" | translate }}:</label>
       <div class="input-error">
         <input
+          type="text"
+          placeholder="image"
+          formControlName="image"
+          required
+        />
+        <div
+          class="error"
+          *ngIf="
+            productForm.get('image')?.invalid &&
+            productForm.get('image')?.touched
+          "
+        >
+          {{ "product.imageRequired" | translate }}
+        </div>
+      </div>
+    </div>
+    <!-- <div class="input-container">
+      <label for="image">{{ "product.image" | translate }}:</label>
+      <div class="input-error">
+        <input
           class="file-input"
           type="file"
           accept="image/*"
@@ -85,7 +105,7 @@
       *ngIf="productForm.get('image')?.value"
       [src]="productForm.get('image')?.value"
       width="200"
-    />
+    /> -->
 
     <button>{{ "product.add" | translate }}</button>
   </form>
