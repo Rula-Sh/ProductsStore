@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrl: './cart.component.scss',
 })
 export class CartComponent {
-  cart: Cart = { products: [] };
+  cart: Cart = { products: [], count: 0 };
 
   constructor(
     private cartService: CartService,
@@ -29,10 +29,12 @@ export class CartComponent {
 
   removeFromCart(item: CartItem): void {
     this.cartService.removeProduct(item.id);
+    this.cart = this.cartService.getCart();
   }
 
   increaseQuantity(item: CartItem): void {
     this.cartService.updateQuantity(item.id, item.quantity + 1);
+    this.cart = this.cartService.getCart();
   }
 
   decreaseQuantity(item: CartItem): void {
@@ -41,6 +43,7 @@ export class CartComponent {
     } else {
       this.removeFromCart(item);
     }
+    this.cart = this.cartService.getCart();
   }
 
   getCartTotal(): number {
