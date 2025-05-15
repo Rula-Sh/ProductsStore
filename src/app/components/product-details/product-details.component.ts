@@ -5,6 +5,7 @@ import { ProductService } from '../../services/product.service';
 import { I18nPipe } from '../../i18n/i18n.pipe';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -25,7 +26,8 @@ export class ProductDetailsComponent {
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -42,11 +44,12 @@ export class ProductDetailsComponent {
     });
   }
 
-  addToCart() {
+  addToCart(product: Product) {
+    this.cartService.addProductToCart(product);
     this.messageService.add({
       severity: 'success',
       summary: 'success',
-      detail: 'ProductAddedToCart',
+      detail: 'Product Added To Cart',
     });
   }
 }
