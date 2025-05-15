@@ -4,6 +4,10 @@
   <!-- products-list -->
   @for(product of products; let i= $index; track i){
   <div class="product-container">
+    <i
+      class="delete-icon bi bi-trash-fill h4"
+      (click)="deleteProduct(product.id)"
+    ></i>
     <img [src]="product.image" />
     <div class="product-content">
       <div class="product-content-header">
@@ -26,3 +30,24 @@
   }
 </div>
 <p-toast />
+<p-confirmdialog #cd>
+  <ng-template pTemplate="footer">
+    <button
+      type="button"
+      pButton
+      icon="pi pi-times"
+      label="Delete"
+      [ngStyle]="{ backgroundColor: '#e09fa6', border: 'red' }"
+      (click)="cd.onAccept()"
+    ></button>
+
+    <button
+      type="button"
+      pButton
+      icon="pi pi-check"
+      label="Cancel"
+      [ngStyle]="{ backgroundColor: '#90c67c', border: 'green' }"
+      (click)="cd.onReject()"
+    ></button>
+  </ng-template>
+</p-confirmdialog>

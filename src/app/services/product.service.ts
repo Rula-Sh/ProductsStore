@@ -24,6 +24,10 @@ export class ProductService {
     return this.api.post<Product>(`${this.url}/products`, product);
   }
 
+  deleteProduct(id: number): Observable<void> {
+    return this.api.delete<void>(`${this.url}/products/${id}`);
+  }
+
   AddToCart(id: number): Observable<Product> {
     return this.api.get<Product>(`${this.url}/products/${id}`);
   }

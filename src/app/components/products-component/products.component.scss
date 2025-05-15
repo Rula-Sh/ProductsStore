@@ -14,6 +14,8 @@ h1 {
 }
 
 .product-container {
+  position: relative;
+  display: inline-block;
   width: 220px;
   height: 300px;
   border-radius: 20px;
@@ -70,4 +72,13 @@ button {
   color: white;
   margin-bottom: 5px;
   background-color: green;
+}
+
+.delete-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  color: red;
+  padding: 4px;
 }
