@@ -53,11 +53,13 @@
         <div
           class="error"
           *ngIf="
-            profileForm.get('newPassword')?.invalid &&
-            profileForm.get('newPassword')?.touched
+            profileForm.get('newPassword')?.touched &&
+            profileForm.get('newPassword')?.errors as errors
           "
         >
-          {{ "profile.passwordRequired" | translate }}
+          <div *ngIf="errors['minlength']">
+            {{ "profile.passwordAtleast6" | translate }}
+          </div>
         </div>
       </div>
     </div>

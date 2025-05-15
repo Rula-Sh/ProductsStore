@@ -42,8 +42,9 @@ export class ProfileComponent {
     this.profileForm = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      newPassword: ['', Validators.required],
-      confirmPassword: ['', Validators.required],
+      password: ['', Validators.required],
+      newPassword: ['', Validators.minLength(6)],
+      confirmPassword: ['', Validators.minLength(6)],
     });
     this.loadProfile();
   }
@@ -54,19 +55,34 @@ export class ProfileComponent {
       email: this.user?.email,
       password: this.user?.password,
     };
+    console.log('adsssdsds', this.user?.password);
+
     this.profileForm.patchValue(profileData); //usually used to save the form data when navigating beteween forms pages (using api) or when the user wants to update old data
     // patchValue is does not include validations.. but the setValue does????.
     this.profileForm.markAllAsTouched(); // used to validate the data once it is loaded
   }
 
   UpdateProfile() {
-    var user: User = {
-      id: 0,
+    if (!this.user) return;
+
+    let password = this.profileForm.value.password;
+
+    if (
+      this.profileForm.value.newPassword ===
+        this.profileForm.value.confirmPassword &&
+      this.profileForm.value.newPassword.trim() !== ''
+    ) {
+      password = this.profileForm.value.newPassword;
+    }
+
+    const user: User = {
+      id: this.user.id,
       username: this.profileForm.value.username,
       email: this.profileForm.value.email,
-      password: this.profileForm.value.password,
-      role: 'Customer',
+      password: password,
+      role: this.user.role,
     };
+
     this.userService.UpdateProfile(user).subscribe({
       next: (value) => {
         console.log('Form Submitted');
@@ -75,7 +91,7 @@ export class ProfileComponent {
         this.profileForm.reset();
       },
       error: (err) => {
-        console.log('Error on Signup', err);
+        console.log('Error on Update', err);
       },
     });
   }
