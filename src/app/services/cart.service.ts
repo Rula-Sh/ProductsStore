@@ -23,9 +23,17 @@ export class CartService {
 
     // Initialize cart if needed
     if (!user.cart) {
-      user.cart = { products: [] };
-    } else if (!user.cart.products) {
-      user.cart.products = [];
+      user.cart = {
+        products: [],
+        count: 0,
+      };
+    } else {
+      if (!user.cart.products) {
+        user.cart.products = [];
+      }
+      if (typeof user.cart.count !== 'number') {
+        user.cart.count = 0;
+      }
     }
 
     const existingItem = user.cart.products.find(
@@ -42,6 +50,7 @@ export class CartService {
         productTotal: product.price,
       };
       user.cart.products.push(newItem);
+      user.cart.count += 1; // increment count properly
     }
 
     // Update user on the server
@@ -49,6 +58,14 @@ export class CartService {
       this.authService.login(updatedUser); // sync localStorage + currentUser
     });
   }
+
+  getCartCount(): number {
+    const user = this.authService.getCurrentUser();
+    if (!user || !user.cart) return 0;
+
+    return user.cart.count;
+  }
+
   removeProduct(productId: number): void {
     const user = this.authService.getCurrentUser();
     if (!user || !user.cart) return;
@@ -89,6 +106,6 @@ export class CartService {
 
   getCart() {
     const user = this.authService.getCurrentUser();
-    return user?.cart || { products: [] };
+    return user?.cart || { products: [], count: 0 };
   }
 }

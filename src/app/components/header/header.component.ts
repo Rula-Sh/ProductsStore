@@ -16,6 +16,7 @@ export class HeaderComponent {
   username: string | null = null;
   role: string | null = null;
   private userSub!: Subscription;
+  cartCount: number = 0;
 
   constructor(private router: Router, private authService: AuthService) {}
 
@@ -24,7 +25,9 @@ export class HeaderComponent {
       this.userId = user?.id || null;
       this.username = user?.username || null;
       this.role = user?.role || null;
+      this.cartCount = user?.cart?.count || 0;
     });
+    console.log('this.cartCount', this.cartCount);
   }
 
   logout() {

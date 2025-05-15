@@ -6,3 +6,19 @@ header {
   background-color: #c9ecf2;
   justify-content: space-between;
 }
+
+.cart-header {
+  position: relative;
+  display: inline-block;
+}
+.cart-count {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  color: white;
+  background-color: red;
+  border-radius: 100px;
+  padding-left: 7px;
+  padding-right: 7px;
+  cursor: pointer;
+}
