@@ -23,7 +23,10 @@ export const authGuard: CanActivateFn = (
 ) => {
   const authService = inject(AuthService);
   const router = inject(Router);
-  if (authService.isLoggedIn()) {
+  // if (authService.isLoggedIn()) {
+  const token = localStorage.getItem('auth_token');
+
+  if (token) {
     return true;
   } else {
     console.log('State:', state);

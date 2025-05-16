@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  userId: number | null = null;
+  userId: string | null = null;
   username: string | null = null;
   role: string | null = null;
   private userSub!: Subscription;
@@ -21,13 +21,33 @@ export class HeaderComponent {
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
-    this.userSub = this.authService.currentUser$.subscribe((user) => {
-      this.userId = user?.id || null;
-      this.username = user?.username || null;
-      this.role = user?.role || null;
-      this.cartCount = user?.cart?.count || 0;
-    });
+    // ----------  using needed user data token ----------
+    this.userId = localStorage.getItem('id');
+    this.username = localStorage.getItem('username');
+    this.role = localStorage.getItem('user_role');
+    this.cartCount = Number(localStorage.getItem('cartCount')) || 0;
+
+    // ----------  using whole user token ----------
+    // const user = this.authService.getCurrentUser();
+    // this.userId = user?.id || null;
+    // this.username = user?.username || null;
+    // this.role = user?.role || null;
+    // this.cartCount = user?.cart?.count || 0;
+
+    // ---------- using currentUserSubject ----------
+    // this.userSub = this.authService.currentUser$.subscribe((user) => {
+    // this.userId = user?.id || null;
+    // this.username = user?.username || null;
+    // this.role = user?.role || null;
+    // this.cartCount = user?.cart?.count || 0;
+    // });
     console.log('this.cartCount', this.cartCount);
+  }
+
+  ngDoCheck() {
+    this.userId = localStorage.getItem('id');
+    this.username = localStorage.getItem('username');
+    this.cartCount = Number(localStorage.getItem('cartCount')) || 0;
   }
 
   logout() {
@@ -39,11 +59,11 @@ export class HeaderComponent {
     this.userSub.unsubscribe();
   }
 
-  goToCart(id: number) {
+  goToCart(id: string) {
     this.router.navigate([`cart/${id}`]);
   }
 
-  goToProfile(id: number) {
+  goToProfile(id: string) {
     this.router.navigate([`profile/${id}`]);
   }
 }

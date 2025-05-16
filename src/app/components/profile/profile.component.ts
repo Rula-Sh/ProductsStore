@@ -34,10 +34,10 @@ export class ProfileComponent {
   ) {}
 
   ngOnInit() {
-    // this.user = this.authService.getCurrentUser();
-    this.userSub = this.authService.currentUser$.subscribe((user) => {
-      this.user = user;
-    });
+    this.user = this.authService.getCurrentUser();
+    // this.userSub = this.authService.currentUser$.subscribe((user) => {
+    //   this.user = user;
+    // });
 
     this.profileForm = this.fb.group({
       username: ['', Validators.required],
@@ -55,7 +55,6 @@ export class ProfileComponent {
       email: this.user?.email,
       password: this.user?.password,
     };
-    console.log('adsssdsds', this.user?.password);
 
     this.profileForm.patchValue(profileData); //usually used to save the form data when navigating beteween forms pages (using api) or when the user wants to update old data
     // patchValue is does not include validations.. but the setValue does????.
@@ -65,34 +64,36 @@ export class ProfileComponent {
   UpdateProfile() {
     if (!this.user) return;
 
-    let password = this.profileForm.value.password;
+    this.userService.getUserById(this.user.id).subscribe((fullUser) => {
+      let password = fullUser.password;
 
-    if (
-      this.profileForm.value.newPassword ===
-        this.profileForm.value.confirmPassword &&
-      this.profileForm.value.newPassword.trim() !== ''
-    ) {
-      password = btoa(this.profileForm.value.newPassword);
-    }
+      if (
+        this.profileForm.value.newPassword ===
+          this.profileForm.value.confirmPassword &&
+        this.profileForm.value.newPassword.trim() !== ''
+      ) {
+        password = btoa(this.profileForm.value.newPassword);
+      }
 
-    const user: User = {
-      id: this.user.id,
-      username: this.profileForm.value.username,
-      email: this.profileForm.value.email,
-      password: password,
-      role: this.user.role,
-    };
+      const updatedUser: User = {
+        id: this.user!.id,
+        username: this.profileForm.value.username,
+        email: this.profileForm.value.email,
+        password: password,
+        role: this.user!.role,
+      };
 
-    this.userService.UpdateProfile(user).subscribe({
-      next: (value) => {
-        console.log('Form Submitted');
-        this.authService.login(user);
-        this.router.navigate(['/']);
-        this.profileForm.reset();
-      },
-      error: (err) => {
-        console.log('Error on Update', err);
-      },
+      this.userService.UpdateProfile(updatedUser).subscribe({
+        next: () => {
+          console.log('Form Submitted');
+          this.authService.login(updatedUser);
+          this.router.navigate(['/']);
+          this.profileForm.reset();
+        },
+        error: (err) => {
+          console.log('Error on Update', err);
+        },
+      });
     });
   }
 }
