@@ -8,10 +8,11 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 // Title is a service that can be used to get and set the title of a current HTML document.
 // Since an Angular application can't be bootstrapped on the entire HTML document (<html> tag) it is not possible to bind to the text property of the HTMLTitleElement elements (representing the <title> tag). Instead, this service can be used to set and get the current title value.
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DateModalComponent } from './components/date-modal/date-modal.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, NgbModule],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, NgbModule, DateModalComponent],
   providers: [NgbActiveModal],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
