@@ -4,10 +4,12 @@
   <!-- products-list -->
   @for(product of products; let i= $index; track i){
   <div class="product-container">
+    @if(role == "admin"){
     <i
       class="delete-icon bi bi-trash-fill h4"
       (click)="deleteProduct(product.id)"
     ></i>
+    }
     <img [src]="product.image" />
     <div class="product-content">
       <div class="product-content-header">
