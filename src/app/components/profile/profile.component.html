@@ -15,7 +15,7 @@
             profileForm.get('username')?.touched
           "
         >
-          {{ "profile.usernameRequired" | translate }}
+          {{ "profile.username-required" | translate }}
         </div>
       </div>
     </div>
@@ -36,12 +36,12 @@
             profileForm.get('email')?.touched
           "
         >
-          {{ "profile.emailRequired" | translate }}
+          {{ "profile.email-required" | translate }}
         </div>
       </div>
     </div>
     <div class="input-container">
-      <label for="newPassword">{{ "profile.newPassword" | translate }}:</label>
+      <label for="newPassword">{{ "profile.new-password" | translate }}:</label>
       <div class="input-error">
         <input
           type="password"
@@ -58,7 +58,7 @@
           "
         >
           <div *ngIf="errors['minlength']">
-            {{ "profile.passwordAtleast6" | translate }}
+            {{ "profile.password-at-least-6" | translate }}
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@
               profileForm.get('newPassword')?.value
           "
         >
-          {{ "profile.confirmRequired" | translate }}
+          {{ "profile.confirm-required" | translate }}
         </div>
       </div>
     </div>

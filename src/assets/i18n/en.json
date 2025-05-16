@@ -19,7 +19,7 @@
     "image": "Image",
     "add": "Add",
     "details": "Details",
-    "addToCart": "Add To Cart"
+    "add-to-cart": "Add To Cart"
   },
   "footer": {
     "english": "English",
@@ -27,14 +27,14 @@
   },
   "profile": {
     "username": "Username",
-    "usernameRequired": "Username Required",
+    "username-required": "Username Required",
     "email": "Email",
-    "emailRequired": "Email Required",
-    "newPassword": "New Password",
-    "passwordRequired": "Password Required",
-    "passwordAtleast6": "Password Must Contain At Least 6 Characters",
-    "confirmPassword": "Confirm Password",
-    "confirmRequired": "Passwords Must Match",
+    "email-required": "Email Required",
+    "new-password": "New Password",
+    "password-required": "Password Required",
+    "password-at-least-6": "Password Must Contain At Least 6 Characters",
+    "confirm-password": "Confirm Password",
+    "confirm-required": "Passwords Must Match",
     "submit": "Submit"
   }
 }

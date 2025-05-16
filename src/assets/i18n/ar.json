@@ -19,7 +19,7 @@
     "image": "الصورة",
     "add": "إضافة",
     "details": "تفاصيل",
-    "addToCart": "أضف إلى السلة"
+    "add-to-cart": "أضف إلى السلة"
   },
   "footer": {
     "english": "الانجليزية",
@@ -27,14 +27,14 @@
   },
   "profile": {
     "username": "الاسم",
-    "usernameRequired": "اسم المستخدم مطلوب",
+    "username-required": "اسم المستخدم مطلوب",
     "email": "البريد الاكتروني",
-    "emailRequired": "البريد الاكتروني مطلوب",
-    "newPassword": "كلمة السر الجديدة",
-    "passwordRequired": "كلمة السر مطلوبة",
-    "passwordAtleast6": "يجب ان تحتوي كلمة السر على الأقل 6 خانات",
-    "confirmPassword": "تأكيد كلمة السر",
-    "confirmRequired": "كلمات السر يجب ان تتطابق",
+    "email-required": "البريد الاكتروني مطلوب",
+    "new-password": "كلمة السر الجديدة",
+    "password-required": "كلمة السر مطلوبة",
+    "password-at-least-6": "يجب ان تحتوي كلمة السر على الأقل 6 خانات",
+    "confirm-password": "تأكيد كلمة السر",
+    "confirm-required": "كلمات السر يجب ان تتطابق",
     "submit": "تقديم"
   }
 }
