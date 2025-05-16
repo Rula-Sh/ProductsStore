@@ -3,8 +3,18 @@ footer {
   align-items: center;
   display: flex;
   justify-content: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 10px;
 }
 
 a {
   text-decoration: none;
+}
+
+img {
+  width: 25px;
+  padding: 0px;
 }
