@@ -57,6 +57,9 @@ export class CartService {
     this.userService.UpdateProfile(user).subscribe((updatedUser) => {
       this.authService.login(updatedUser); // sync localStorage + currentUser
     });
+
+    localStorage.setItem('cart', JSON.stringify(user.cart));
+    localStorage.setItem('cartCount', user.cart.count.toString());
   }
 
   getCartCount(): number {
@@ -66,7 +69,7 @@ export class CartService {
     return user.cart.count;
   }
 
-  removeProduct(productId: number): void {
+  removeProduct(productId: string): void {
     const user = this.authService.getCurrentUser();
     if (!user || !user.cart) return;
 
@@ -79,8 +82,12 @@ export class CartService {
     this.userService.UpdateProfile(user).subscribe((updatedUser) => {
       this.authService.login(updatedUser);
     });
+
+    localStorage.setItem('cart', JSON.stringify(user.cart));
+    localStorage.setItem('cartCount', user.cart.count.toString());
   }
-  updateQuantity(productId: number, quantity: number): void {
+
+  updateQuantity(productId: string, quantity: number): void {
     const user = this.authService.getCurrentUser();
     if (!user || !user.cart) return;
 
@@ -100,6 +107,7 @@ export class CartService {
     if (!user || !user.cart) return;
 
     user.cart.products = [];
+    user.cart.count = 0;
 
     this.userService.UpdateProfile(user).subscribe((updatedUser) => {
       this.authService.login(updatedUser);
