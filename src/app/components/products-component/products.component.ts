@@ -10,6 +10,7 @@ import { CartService } from '../../services/cart.service';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-products',
@@ -27,7 +28,7 @@ import { ButtonModule } from 'primeng/button';
 export class ProductsComponent {
   products: Product[] = [
     {
-      id: 0,
+      id: '',
       name: '',
       price: 0,
       properties: '',
@@ -40,11 +41,14 @@ export class ProductsComponent {
     private router: Router,
     private messageService: MessageService,
     private cartService: CartService,
-    private confirmationService: ConfirmationService
+    private confirmationService: ConfirmationService,
+    private authService: AuthService
   ) {}
 
+  role: string | null = null;
   ngOnInit() {
     this.getProducts();
+    this.role = localStorage.getItem('user_role');
   }
 
   getProducts() {
@@ -59,20 +63,28 @@ export class ProductsComponent {
     });
   }
 
-  showProductDetails(id: number) {
+  showProductDetails(id: string) {
     this.router.navigate([`products/${id}`]);
   }
 
   addToCart(product: Product) {
-    this.cartService.addProductToCart(product);
-    this.messageService.add({
-      severity: 'success',
-      summary: 'success',
-      detail: 'Product Added To Cart',
-    });
+    if (this.authService.isLoggedIn()) {
+      this.cartService.addProductToCart(product);
+      this.messageService.add({
+        severity: 'success',
+        summary: 'success',
+        detail: 'Product Added To Cart',
+      });
+    } else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Please Login First',
+      });
+    }
   }
 
-  deleteProduct(id: number) {
+  deleteProduct(id: string) {
     this.confirmationService.confirm({
       message: 'Are you sure you want to delete this post?',
       header: 'DeletePost',
