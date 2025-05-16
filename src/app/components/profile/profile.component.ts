@@ -72,7 +72,7 @@ export class ProfileComponent {
         this.profileForm.value.confirmPassword &&
       this.profileForm.value.newPassword.trim() !== ''
     ) {
-      password = this.profileForm.value.newPassword;
+      password = btoa(this.profileForm.value.newPassword);
     }
 
     const user: User = {

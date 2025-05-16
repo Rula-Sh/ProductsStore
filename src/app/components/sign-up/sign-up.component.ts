@@ -42,7 +42,7 @@ export class SignUpComponent {
     var user: Omit<User, 'id'> = {
       username: this.userForm.value.username,
       email: this.userForm.value.email,
-      password: this.userForm.value.password,
+      password: btoa(this.userForm.value.password),
       role: 'Customer',
     };
     this.userService.CreateUser(user).subscribe({

@@ -41,7 +41,7 @@ export class LoginComponent {
 
     this.userService.getAllUsers().subscribe((users) => {
       const user = users.find(
-        (u) => u.email === email && u.password === password
+        (u) => u.email === email && atob(u.password) === password
       );
       console.log('user', user);
       if (user) {

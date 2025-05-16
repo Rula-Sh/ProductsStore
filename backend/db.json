@@ -21,6 +21,13 @@
         "products": [],
         "count": 0
       }
+    },
+    {
+      "id": "147d",
+      "username": "asd",
+      "email": "asd@asd.asd",
+      "password": "YXNkYXNk",
+      "role": "Customer"
     }
   ],
   "products": [
