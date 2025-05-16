@@ -5,6 +5,8 @@ header {
   display: flex;
   background-color: #c9ecf2;
   justify-content: space-between;
+  border-end-end-radius: 20px;
+  border-end-start-radius: 20px;
 }
 
 .cart-header {
@@ -21,4 +23,14 @@ header {
   padding-left: 7px;
   padding-right: 7px;
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 35px;
+  padding: 0px;
 }

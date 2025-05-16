@@ -7,7 +7,11 @@
     <div class="input-container">
       <label for="username"> {{ "profile.username" | translate }}:</label>
       <div class="input-error">
-        <input type="text" placeholder="Username" formControlName="username" />
+        <input
+          type="text"
+          [placeholder]="'profile.username' | translate"
+          formControlName="username"
+        />
         <div
           class="error"
           *ngIf="
@@ -24,7 +28,7 @@
       <div class="input-error">
         <input
           type="email"
-          placeholder="Email"
+          [placeholder]="'profile.email' | translate"
           formControlName="email"
           required
           email
@@ -45,7 +49,7 @@
       <div class="input-error">
         <input
           type="password"
-          placeholder="new Password"
+          [placeholder]="'profile.new-password' | translate"
           formControlName="newPassword"
           required
           minlength="6"
@@ -65,12 +69,12 @@
     </div>
     <div class="input-container">
       <label for="confirmPassword"
-        >{{ "profile.confirmPassword" | translate }}:</label
+        >{{ "profile.confirm-password" | translate }}:</label
       >
       <div class="input-error">
         <input
           type="password"
-          placeholder="Confirm Password"
+          [placeholder]="'profile.confirm-password' | translate"
           formControlName="confirmPassword"
           required
           minlength="6"

@@ -12,10 +12,11 @@ import { User } from '../../models/user';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
+import { I18nPipe } from '../../i18n/i18n.pipe';
 
 @Component({
   selector: 'app-sign-up',
-  imports: [FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, I18nPipe],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss',
 })

@@ -8,7 +8,12 @@
     <div class="input-container">
       <label for="name">{{ "product.name" | translate }}:</label>
       <div class="input-error">
-        <input type="text" placeholder="name" formControlName="name" required />
+        <input
+          type="text"
+          [placeholder]="'product.name' | translate"
+          formControlName="name"
+          required
+        />
         <div
           class="error"
           *ngIf="
@@ -24,7 +29,7 @@
       <div class="input-error">
         <input
           type="number"
-          placeholder="price"
+          [placeholder]="'product.price' | translate"
           formControlName="price"
           required
         />
@@ -44,7 +49,7 @@
       <div class="input-error">
         <input
           type="text"
-          placeholder="properties"
+          [placeholder]="'product.properties' | translate"
           formControlName="properties"
           required
         />
@@ -64,7 +69,7 @@
       <div class="input-error">
         <input
           type="text"
-          placeholder="image"
+          [placeholder]="'product.image' | translate"
           formControlName="image"
           required
         />
@@ -85,6 +90,7 @@
         <input
           class="file-input"
           type="file"
+          [placeholder]="'product.image' | translate"
           accept="image/*"
           required
           (change)="onFileSelected($event)"

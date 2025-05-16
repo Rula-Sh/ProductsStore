@@ -5,7 +5,11 @@
       "username": "admin",
       "email": "admin@admin.admin",
       "password": "cXdlcXdl",
-      "role": "Customer"
+      "role": "Admin",
+      "cart": {
+        "products": [],
+        "count": 0
+      }
     },
     {
       "id": "ccd0",

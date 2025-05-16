@@ -31,12 +31,16 @@ export class ManageProductsComponent {
   ) {}
 
   ngOnInit() {
-    this.productForm = this.fb.group({
-      name: ['', Validators.required],
-      price: ['', Validators.required],
-      properties: ['', Validators.required],
-      image: ['', Validators.required],
-    });
+    if (localStorage.getItem('user_role') !== 'Admin') {
+      this.router.navigate(['/not-autherized']);
+    } else {
+      this.productForm = this.fb.group({
+        name: ['', Validators.required],
+        price: ['', Validators.required],
+        properties: ['', Validators.required],
+        image: ['', Validators.required],
+      });
+    }
   }
 
   selectedFile!: File;

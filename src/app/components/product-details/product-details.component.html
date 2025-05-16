@@ -4,10 +4,10 @@
   <div class="data">
     <h1>{{ product.name }}</h1>
     <p>
-      <strong> {{ "product.price" | translate }} </strong> {{ product.price }}
+      <strong> {{ "product.price" | translate }}: </strong> {{ product.price }}
     </p>
     <p>
-      <strong>{{ "product.properties" | translate }} </strong>
+      <strong>{{ "product.properties" | translate }}: </strong>
       {{ product.properties }}
     </p>
     <button class="add-to-cart" (click)="addToCart(product)">
@@ -21,7 +21,7 @@
   routerLinkActive="router-link-active"
   class="go-back"
 >
-  ← Go back
+  {{ "product.go-back" | translate }}
 </button>
 
 <p-toast />

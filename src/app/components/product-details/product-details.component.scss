@@ -11,13 +11,14 @@
 
 img {
   width: 40%;
-  margin-right: 50px;
   border-start-start-radius: 25px;
   border-end-start-radius: 25px;
 }
 
 .data {
   font-size: 18px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 .go-back {
@@ -26,6 +27,7 @@ img {
   border-radius: 10px;
   font-size: 20px;
   margin-left: 270px;
+  margin-right: 270px;
   margin-top: 60px;
   background-color: #afdde5;
   font-weight: bold;

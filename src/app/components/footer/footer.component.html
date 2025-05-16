@@ -1,5 +1,13 @@
 <footer>
-  <a (click)="changeLanguage('en')">{{ "footer.english" | translate }}</a>
+  <a
+    (click)="changeLanguage('en')"
+    [class]="lang == 'en' ? 'text-bold h5 text-black' : 'text-black'"
+    >{{ "footer.english" | translate }}</a
+  >
   <span>●</span>
-  <a (click)="changeLanguage('ar')">{{ "footer.arabic" | translate }}</a>
+  <a
+    (click)="changeLanguage('ar')"
+    [class]="lang == 'en' ? 'text-black' : 'text-bold h5 text-black'"
+    >{{ "footer.arabic" | translate }}</a
+  >
 </footer>

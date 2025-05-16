@@ -1,11 +1,11 @@
 <div class="center-wrapper">
   <form class="container" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
     <div class="input-container">
-      <label for="email">Email:</label>
+      <label for="email"> {{ "profile.email" | translate }}:</label>
       <div class="input-error">
         <input
           type="email"
-          placeholder="Email"
+          [placeholder]="'profile.email' | translate"
           formControlName="email"
           required
           email
@@ -16,16 +16,16 @@
             loginForm.get('email')?.invalid && loginForm.get('email')?.touched
           "
         >
-          Email required
+          {{ "profile.email-required" | translate }}
         </div>
       </div>
     </div>
     <div class="input-container">
-      <label for="password">Password:</label>
+      <label for="password">{{ "profile.password" | translate }}:</label>
       <div class="input-error">
         <input
           type="password"
-          placeholder="Password"
+          [placeholder]="'profile.password' | translate"
           formControlName="password"
           required
           minlength="6"
@@ -37,10 +37,10 @@
             loginForm.get('password')?.touched
           "
         >
-          Password required
+          {{ "profile.password-required" | translate }}
         </div>
       </div>
     </div>
-    <button>Login</button>
+    <button>{{ "header.login" | translate }}</button>
   </form>
 </div>

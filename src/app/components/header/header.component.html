@@ -1,22 +1,35 @@
 <header>
   <div>
     <a
+      class="ms-3"
       [routerLink]="'/products'"
       routerLinkActive="active-link"
       [routerLinkActiveOptions]="{ exact: true }"
-      >🛍️{{ "header.title" | translate }}</a
     >
+      <!-- 🛍️ -->
+      <img
+        src="/assets/images/shopping-bags-icon.png"
+        alt="shopping bags icon"
+      />
+      {{ "header.title" | translate }}
+    </a>
     @if(role == 'Admin'){
-    <a [routerLink]="`/manage-products`" routerLinkActive="active-link"
-      >{{ "header.manage-products" | translate }}🏪</a
-    >
+    <a [routerLink]="`/manage-products`" routerLinkActive="active-link">
+      <!-- 🏪 -->
+      <img src="/assets/images/manage-products-2.png" alt="store icon" />
+      {{ "header.manage-products" | translate }}
+    </a>
     }
     <a
-      class="cart-header"
+      class="cart-header ms-3"
       *ngIf="username"
       [routerLink]="'/cart'"
       routerLinkActive="active-link"
-      >{{ "header.myCart" | translate }}🛒 @if(cartCount > 0){
+    >
+      <!-- 🛒  -->
+      <img src="/assets/images/cart-icon.png" alt="cart icon" />
+      {{ "header.myCart" | translate }}
+      @if(cartCount > 0){
       <span class="cart-count"> {{ cartCount }} </span>
       }
     </a>
@@ -27,17 +40,27 @@
       [routerLink]="`/profile/${userId}`"
       routerLinkActive="active-link"
       (click)="goToProfile(userId!)"
-      >{{ "header.welcome" | translate }}, {{ username }}👋</a
-    >
+      >{{ "header.welcome" | translate }}, {{ username }}
+      <!-- 👋 -->
+
+      <img src="/assets/images/waving-hand-icon.svg" alt="waving hand icon" />
+    </a>
     @if(username){
-    <a (click)="logout()">{{ "header.logout" | translate }} </a>
+    <a (click)="logout()"
+      >{{ "header.logout" | translate }}
+      <img src="/assets/images/logout-icon.webp" alt="logout icon" />
+    </a>
     } @else{
     <a [routerLink]="'/login'" routerLinkActive="active-link"
-      >{{ "header.login" | translate }}🙎🏻‍♂️</a
-    >
+      >{{ "header.login" | translate }}
+      <!-- 🙎🏻‍♂️ -->
+      <img src="/assets/images/login-icon.webp" alt="login icon" />
+    </a>
     <a [routerLink]="'/signup'" routerLinkActive="active-link"
-      >{{ "header.register" | translate }}🙋‍♀️</a
-    >
+      >{{ "header.register" | translate }}
+      <!-- 🙋‍♀️ -->
+      <img src="/assets/images/sign-up-icon.png" alt="sign up icon" />
+    </a>
     }
   </div>
 </header>

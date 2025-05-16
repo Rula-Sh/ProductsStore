@@ -19,7 +19,8 @@
     "image": "Image",
     "add": "Add",
     "details": "Details",
-    "add-to-cart": "Add To Cart"
+    "add-to-cart": "Add To Cart",
+    "go-back": "← Go Back"
   },
   "footer": {
     "english": "English",
@@ -30,6 +31,7 @@
     "username-required": "Username Required",
     "email": "Email",
     "email-required": "Email Required",
+    "password": "Password",
     "new-password": "New Password",
     "password-required": "Password Required",
     "password-at-least-6": "Password Must Contain At Least 6 Characters",

@@ -1,9 +1,13 @@
 <div class="center-wrapper">
   <form class="container" [formGroup]="userForm" (ngSubmit)="createUser()">
     <div class="input-container">
-      <label for="username">Name:</label>
+      <label for="username">{{ "profile.username" | translate }}:</label>
       <div class="input-error">
-        <input type="text" placeholder="Username" formControlName="username" />
+        <input
+          type="text"
+          [placeholder]="'profile.username' | translate"
+          formControlName="username"
+        />
         <div
           class="error"
           *ngIf="
@@ -11,16 +15,16 @@
             userForm.get('username')?.touched
           "
         >
-          Username Required
+          {{ "profile.username-required" | translate }}
         </div>
       </div>
     </div>
     <div class="input-container">
-      <label for="email">Email:</label>
+      <label for="email">{{ "profile.email" | translate }}:</label>
       <div class="input-error">
         <input
           type="email"
-          placeholder="Email"
+          [placeholder]="'profile.email' | translate"
           formControlName="email"
           required
           email
@@ -31,16 +35,16 @@
             userForm.get('email')?.invalid && userForm.get('email')?.touched
           "
         >
-          Email required
+          {{ "profile.email-required" | translate }}
         </div>
       </div>
     </div>
     <div class="input-container">
-      <label for="password">Password:</label>
+      <label for="password">{{ "profile.password" | translate }}:</label>
       <div class="input-error">
         <input
           type="password"
-          placeholder="Password"
+          [placeholder]="'profile.password' | translate"
           formControlName="password"
           required
           minlength="6"
@@ -52,16 +56,18 @@
             userForm.get('password')?.touched
           "
         >
-          Password required
+          {{ "profile.password-required" | translate }}
         </div>
       </div>
     </div>
     <div class="input-container">
-      <label for="confirmPassword">ConfirmPassword:</label>
+      <label for="confirmPassword"
+        >{{ "profile.confirm-password" | translate }}:</label
+      >
       <div class="input-error">
         <input
           type="password"
-          placeholder="Confirm Password"
+          [placeholder]="'profile.confirm-password' | translate"
           formControlName="confirmPassword"
           required
           minlength="6"
@@ -74,10 +80,10 @@
               userForm.get('password')?.value
           "
         >
-          Passwords Must Match
+          {{ "profile.confirm-required" | translate }}
         </div>
       </div>
     </div>
-    <button>Sign Up</button>
+    <button>{{ "header.register" | translate }}</button>
   </form>
 </div>

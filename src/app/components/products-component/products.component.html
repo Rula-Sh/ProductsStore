@@ -4,7 +4,7 @@
   <!-- products-list -->
   @for(product of products; let i= $index; track i){
   <div class="product-container">
-    @if(role == "admin"){
+    @if(role == "Admin"){
     <i
       class="delete-icon bi bi-trash-fill h4"
       (click)="deleteProduct(product.id)"
