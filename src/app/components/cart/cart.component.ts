@@ -29,6 +29,7 @@ export class CartComponent {
 
   removeFromCart(item: CartItem): void {
     this.cartService.removeProduct(item.id);
+
     this.cart = this.cartService.getCart();
   }
 

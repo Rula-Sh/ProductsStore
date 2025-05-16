@@ -7,45 +7,8 @@
       "password": "admin",
       "role": "Admin",
       "cart": {
-        "products": [
-          {
-            "id": "2",
-            "name": "Phone",
-            "price": 200,
-            "properties": "Huawei phone with 3 cameras",
-            "image": "https://res.cloudinary.com/dnoxelx9f/image/upload/v1746876582/EOS-5D-Mark-IV_9999_744_an24af.png",
-            "quantity": 2,
-            "productTotal": 400
-          },
-          {
-            "id": "1",
-            "name": "Laptop",
-            "price": 400,
-            "properties": "ASUS Laptop with 8GB RAM",
-            "image": "https://res.cloudinary.com/dnoxelx9f/image/upload/v1746875768/cheapgaminglaptops-2048px-7981_jn2zdm.webp",
-            "quantity": 2,
-            "productTotal": 800
-          },
-          {
-            "id": "3",
-            "name": "Charger",
-            "price": 10,
-            "properties": "type-C charger 3m long",
-            "image": "https://res.cloudinary.com/dnoxelx9f/image/upload/v1746876888/white-mobile-phone-charger-on-black-background-free-photo_p8d36y.jpg",
-            "quantity": 2,
-            "productTotal": 20
-          },
-          {
-            "id": "4",
-            "name": "Tablet",
-            "price": 200,
-            "properties": "Huawei Tablet with 8GB RAM",
-            "image": "https://res.cloudinary.com/dnoxelx9f/image/upload/v1746875820/download_joagwp.jpg",
-            "quantity": 1,
-            "productTotal": 200
-          }
-        ],
-        "count": 4
+        "products": [],
+        "count": 0
       }
     },
     {
@@ -55,17 +18,8 @@
       "password": "qweqwe",
       "role": "Customer",
       "cart": {
-        "products": [
-          {
-            "id": "2",
-            "name": "Phone",
-            "price": 200,
-            "properties": "Huawei phone with 3 cameras",
-            "image": "https://res.cloudinary.com/dnoxelx9f/image/upload/v1746876582/EOS-5D-Mark-IV_9999_744_an24af.png",
-            "quantity": 1,
-            "productTotal": 200
-          }
-        ]
+        "products": [],
+        "count": 0
       }
     }
   ],

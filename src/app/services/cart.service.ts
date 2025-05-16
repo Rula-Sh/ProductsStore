@@ -74,6 +74,8 @@ export class CartService {
       (item) => item.id !== productId
     );
 
+    user.cart.count = --user.cart.count;
+
     this.userService.UpdateProfile(user).subscribe((updatedUser) => {
       this.authService.login(updatedUser);
     });
