@@ -20,6 +20,7 @@
             name="dp"
             ngbDatepicker
             #dp="ngbDatepicker"
+            [(ngModel)]="selectedDate"
           />
           <button
             class="btn btn-outline-secondary bi bi-calendar3"
@@ -42,6 +43,7 @@
       type="button"
       class="btn btn-secondary"
       (click)="modal.close('Save click')"
+      (click)="saveDate(modal)"
     >
       Save
     </button>

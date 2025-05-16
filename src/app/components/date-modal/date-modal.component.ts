@@ -5,22 +5,25 @@ import {
   TemplateRef,
   WritableSignal,
 } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import {
   ModalDismissReasons,
   NgbDatepickerModule,
+  NgbDateStruct,
   NgbModal,
 } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-date-modal',
-  imports: [NgbDatepickerModule],
+  imports: [NgbDatepickerModule, FormsModule],
   templateUrl: './date-modal.component.html',
   styleUrl: './date-modal.component.scss',
 })
 export class DateModalComponent {
   private modalService = inject(NgbModal);
   closeResult: WritableSignal<string> = signal('');
+  selectedDate: NgbDateStruct | null = null;
 
   open(content: TemplateRef<any>) {
     this.modalService
@@ -44,5 +47,9 @@ export class DateModalComponent {
       default:
         return `with: ${reason}`;
     }
+  }
+  saveDate(modal: any) {
+    console.log('Selected date:', this.selectedDate);
+    modal.close('Save click');
   }
 }
