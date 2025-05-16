@@ -11,8 +11,14 @@
       >{{ "header.manage-products" | translate }}🏪</a
     >
     }
-    <a class="cart-header" *ngIf="username" [routerLink]="'/cart'" routerLinkActive="active-link"
-      >{{ "header.myCart" | translate }}🛒 <span class="cart-count"> {{ cartCount }} </span>
+    <a
+      class="cart-header"
+      *ngIf="username"
+      [routerLink]="'/cart'"
+      routerLinkActive="active-link"
+      >{{ "header.myCart" | translate }}🛒 @if(cartCount > 0){
+      <span class="cart-count"> {{ cartCount }} </span>
+      }
     </a>
   </div>
   <div>
