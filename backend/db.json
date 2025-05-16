@@ -1,33 +1,22 @@
 {
   "users": [
     {
-      "id": "0",
+      "id": "d0ba",
       "username": "admin",
       "email": "admin@admin.admin",
-      "password": "admin",
-      "role": "Admin",
-      "cart": {
-        "products": [],
-        "count": 0
-      }
+      "password": "cXdlcXdl",
+      "role": "Customer"
     },
     {
-      "id": "82c1",
+      "id": "ccd0",
       "username": "qwe",
       "email": "qwe@qwe.qwe",
-      "password": "qweqwe",
+      "password": "cXdlcXdl",
       "role": "Customer",
       "cart": {
         "products": [],
         "count": 0
       }
-    },
-    {
-      "id": "147d",
-      "username": "asd",
-      "email": "asd@asd.asd",
-      "password": "YXNkYXNk",
-      "role": "Customer"
     }
   ],
   "products": [
