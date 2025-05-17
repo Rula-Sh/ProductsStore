@@ -47,6 +47,7 @@ export class HeaderComponent {
   ngDoCheck() {
     this.userId = localStorage.getItem('id');
     this.username = localStorage.getItem('username');
+    this.role = localStorage.getItem('user_role');
     this.cartCount = Number(localStorage.getItem('cartCount')) || 0;
   }
 
