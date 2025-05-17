@@ -64,4 +64,9 @@ export class CartComponent {
       this.router.navigate(['/']);
     }, 1000);
   }
+
+  clearCart(): void {
+    this.cartService.clearCart();
+    this.cart = this.cartService.getCart();
+  }
 }

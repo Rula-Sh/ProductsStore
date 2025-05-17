@@ -109,6 +109,22 @@ img {
   }
 }
 
+.clear-cart {
+  margin: 5px;
+  background-color: #e03030;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #b82828;
+  }
+}
+
 .cart-bottom {
   margin: 10px;
   display: flex;

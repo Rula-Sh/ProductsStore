@@ -28,20 +28,35 @@
             ></i>
           </div>
           <p class="product-total">
-            <strong> Total:</strong> ${{ product.productTotal }}
+            <strong> {{ "product.total" | translate }}:</strong> ${{
+              product.productTotal
+            }}
           </p>
         </div>
       </div>
     </div>
   </div>
   <div class="cart-bottom" *ngIf="cart.products.length">
-    <button class="purchase" (click)="purchase()">Purchase</button>
-    <h3 class="m-0">Total: ${{ getCartTotal() }}</h3>
+    <h3 class="m-1 align-self-center">
+      {{ "product.total" | translate }}: ${{ getCartTotal() }}
+    </h3>
+    <button class="purchase" (click)="purchase()">
+      {{ "product.purchase" | translate }}
+    </button>
+    <button
+      class="clear-cart"
+      (click)="clearCart()"
+      *ngIf="cart.products.length > 0"
+    >
+      {{ "product.clear-cart" | translate }}
+    </button>
   </div>
 </div>
 } @else {
 <div class="empty-cart-div">
-  <h1 class="empty-cart-h">Your Cart is Empty. 😢</h1>
+  <h1 class="empty-cart-h">
+    {{ "product.your-cart-is-empty" | translate }} 😢
+  </h1>
 </div>
 
 }

@@ -20,7 +20,11 @@
     "add": "إضافة",
     "details": "تفاصيل",
     "add-to-cart": "أضف إلى السلة",
-    "go-back": "→ الرجوع إلى الخلف"
+    "go-back": "→ الرجوع إلى الخلف",
+    "total": "المجموع",
+    "purchase": "شراء",
+    "clear-cart": "إفراغ السلة",
+    "your-cart-is-empty": "سلتك فارغة"
   },
   "footer": {
     "english": "الانجليزية",

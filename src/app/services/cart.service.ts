@@ -112,6 +112,8 @@ export class CartService {
     this.userService.UpdateProfile(user).subscribe((updatedUser) => {
       this.authService.login(updatedUser);
     });
+    localStorage.setItem('cart', JSON.stringify(user.cart));
+    localStorage.setItem('cartCount', user.cart.count.toString());
   }
 
   getCart() {

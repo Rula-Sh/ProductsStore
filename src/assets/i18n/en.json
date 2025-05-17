@@ -20,7 +20,11 @@
     "add": "Add",
     "details": "Details",
     "add-to-cart": "Add To Cart",
-    "go-back": "← Go Back"
+    "go-back": "← Go Back",
+    "total": "Total",
+    "purchase": "Purchase",
+    "clear-cart": "Clear Cart",
+    "your-cart-is-empty": "Your Cart is Empty"
   },
   "footer": {
     "english": "English",
